@@ -2,6 +2,7 @@ package com.maverickallies.glideandpicasolibrary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,5 +29,9 @@ public class MainActivity extends AppCompatActivity {
     public void LoadNewImage(View view){
         String imgURL = "https://picsum.photos/200";
         Glide.with(this).load(imgURL).apply(RequestOptions.bitmapTransform(new RoundedCorners(18))).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).into(imageView);
+    }
+    public void NextPage(View view){
+        Intent intent = new Intent(this,SecondActivity.class);
+        startActivity(intent);
     }
 }
